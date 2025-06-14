@@ -1,18 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0;url=https://www.stan.store/?ref=linhdao22">
-    <title>Redirecting…</title>
-    <style>
-      body {
-        font-family: sans-serif;
-        text-align: center;
-        padding-top: 100px;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>Redirecting you to Stan Store...</h2>
-    <p>Please wait a moment. If you are not redirected, <a href="https://www.stan.store/?ref=linhdao22">click here</a>.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>Redirecting you to Stan Store...</h2>
+  <p>If you're not redirected, <a id="manual" href="#">click here</a>.</p>
+
+  <script>
+    const targetUrl = "https://www.stan.store/?ref=linhdao22";
+
+    // Hide referrer by opening through a meta refresh inside a new window
+    setTimeout(() => {
+      const link = document.createElement('a');
+      link.href = targetUrl;
+      link.rel = "noreferrer";
+      link.target = "_top";
+      document.body.appendChild(link);
+      link.click();
+    }, 1500); // 1.5 giây
+
+    // Manual click fallback
+    document.getElementById("manual").href = targetUrl;
+  </script>
+</body>
 </html>
