@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Redirecting...</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <h2>Redirecting you to Stan Store...</h2>
-  <p>If you're not redirected, <a id="manual" href="#">click here</a>.</p>
-
-  <script>
-    const targetUrl = "https://www.stan.store/?ref=linhdao22";
-
-    // Chuyển hướng sau 0.6 giây (600ms) và ẩn referrer
-    setTimeout(() => {
-      const iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      iframe.src = `data:text/html,<meta http-equiv='refresh' content='0;url=${targetUrl}'>`;
-      document.body.appendChild(iframe);
-    }, 600);
-
-    // Fallback nếu JS không chạy
-    document.getElementById("manual").href = targetUrl;
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="1.5;url=https://www.stan.store/?ref=linhdao22" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Redirecting...</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #f9f9f9;
+        text-align: center;
+        padding-top: 80px;
+        color: #333;
+      }
+      .box {
+        display: inline-block;
+        padding: 20px 30px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      a {
+        color: #0066cc;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h2>Redirecting you to Stan Store…</h2>
+      <p>Please wait a moment.</p>
+      <p>If you are not redirected, <a href="https://www.stan.store/?ref=linhdao22">click here</a>.</p>
+    </div>
+  </body>
 </html>
